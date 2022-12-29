@@ -1,0 +1,21 @@
+[package]
+name = "helloworld"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+futures = "0.3.7"
+tokio = "1.23.0"
+websocket = "0.24.0"
+serde_json = "1.0"
+chrono = "0.4.23"
+web3 = "0.18.0"
+hex-literal = "0.3.4"
+ethabi = "^3.0"
+bignumber = "0.0.16"
+ethereum-types = "0.14.1"
+
+[features]
+async_await = []
