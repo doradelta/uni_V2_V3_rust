@@ -50,10 +50,10 @@ fn print_uniswap_v2_price(log: &Log, token0_decimals: u8, token1_decimals: u8) {
     println!("Price: {}", price.to_precision(5));
 }
 
-/*
+/**
     Prints uniswap pool type (V3) and price token1/token0 (e.g. WETH/USDC: 0.00065) 
     UniswapV3 source how price is calculated: https://docs.uniswap.org/sdk/v3/guides/fetching-prices
-*/
+**/
 fn print_uniswap_v3_price(log: &Log, token0_decimals: u8, token1_decimals: u8) {
     println!("Pool type: UniswapV3");
 
