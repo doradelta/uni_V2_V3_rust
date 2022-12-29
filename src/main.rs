@@ -97,11 +97,11 @@ async fn main() -> web3::contract::Result<()> {
         let log = log_result;
         let mut pool_address_info : AddressInfo = Default::default();
 
-        /* 
+        /** 
             If the pool has already been seen by this program at runtime, 
             we don't ask again for static data (such as the decimals or symbol of a token),
             because we have stored this information in a map
-        */
+        **/
 
         if map.contains_key(&log.address) {
             // Pool_address already stored
@@ -148,7 +148,7 @@ async fn main() -> web3::contract::Result<()> {
                 .await
                 .expect("Error reading symbol from ERC20 contract");
         
-            // Query token0 symbol (e.g. USDC)
+            // Query token1 symbol (e.g. USDC)
             pool_address_info.token1_symbol = token1_contract
                 .query("symbol", (), None, Options::default(), None)
                 .await
