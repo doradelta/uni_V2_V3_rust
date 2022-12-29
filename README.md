@@ -1,22 +1,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="[images/logo.png](https://tycoon.io/insights/wp-content/uploads/2021/04/TYC_Uniswap_1.png)" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Uniswap V2 & V3 event listener</h3> :unicorn:
 
-  <p align="center">
-    An awesome README template to jumpstart your projects!
+  <p align="center"> <br />
+    Implementation: It listens to the blockchain filtering events (Sync event uniswap V2 and Swap event Uniswap V3). Specifically, there are two data in which symbol (e.g. WETH/USDC) and decimals (e.g. 8) need to be queried, this means that there may be a certain overhead of queries, so I have created a HashMap to store this information, and there is no need to ask the blockchain again. The rest of the information can be obtained directly from the events.
+    <br /> <br />
+    Possible improvements or changes: Filter (apart from events) with contracts (e.g. UniswapV2Contract). When a query is made, if there is an error, it is handled with an except("..."), that is, for the execution (it can be changed with a try!). A more advanced implementation would be to get the optimal price of a pair (e.g. WETH/USDC), through routes with other pairs, or by looking in the mempool
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://docs.uniswap.org/sdk/v2/guides/pricing"><strong>How price is calculated in UniswapV2: docs »</strong></a>
+    <br />
+    <a href="https://docs.uniswap.org/sdk/v3/guides/fetching-prices"><strong>How price is calculated in UniswapV3: docs »</strong></a>
+    <br />
+    <a href="https://www.youtube.com/watch?v=hKhdQl126Ys">Youtube: calculate uniswap V2 & pV3 price</a>
   </p>
 </div>
