@@ -18,7 +18,7 @@
     <a href="https://www.youtube.com/watch?v=hKhdQl126Ys">Youtube: calculate uniswap V2 & pV3 price</a>
     
   <a href="https://github.com/banegil/uni_V2_V3_rust">
-    <img src="image.png" alt="Logo" width="80" height="80">
+    <img src="image.png" alt="Test">
   </a>
   </p>
 </div>
