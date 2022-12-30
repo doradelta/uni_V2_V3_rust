@@ -16,5 +16,7 @@
     <a href="https://docs.uniswap.org/sdk/v3/guides/fetching-prices"><strong>How price is calculated in UniswapV3: docs »</strong></a>
     <br />
     <a href="https://www.youtube.com/watch?v=hKhdQl126Ys">Youtube: calculate uniswap V2 & pV3 price</a>
+    
+    <img src="image.png" alt="Logo" width="80" height="80">
   </p>
 </div>
