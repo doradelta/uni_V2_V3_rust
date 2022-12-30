@@ -94,7 +94,7 @@ async fn main() -> web3::contract::Result<()> {
     let sub = web3.eth_subscribe().subscribe_logs(filter).await?;
     let mut map : HashMap<Address, AddressInfo> = HashMap::new();
     
-    // Iterate over rreceived events
+    // Iterate over received events
     let _ = sub.try_fold(&mut map, |map, log_result| async {
         let log = log_result;
         let mut pool_address_info : AddressInfo = Default::default();
