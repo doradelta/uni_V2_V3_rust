@@ -50,10 +50,10 @@ fn print_uniswap_v2_price(log: &Log, token0_decimals: u8, token1_decimals: u8) {
     println!("Price: {}", price.to_precision(5));
 }
 
-/**
+/*
     Prints uniswap pool type (V3) and price token1/token0 (e.g. WETH/USDC: 0.00065) 
     UniswapV3 source how price is calculated: https://docs.uniswap.org/sdk/v3/guides/fetching-prices
-**/
+*/
 fn print_uniswap_v3_price(log: &Log, token0_decimals: u8, token1_decimals: u8) {
     println!("Pool type: UniswapV3");
 
@@ -92,8 +92,10 @@ async fn main() -> web3::contract::Result<()> {
 
     // Subscribe
     let sub = web3.eth_subscribe().subscribe_logs(filter).await?;
-
-    let _ = sub.try_fold::<HashMap<Address, AddressInfo>, _, _>(HashMap::new(), |mut map, log_result| async {
+    let mut map : HashMap<Address, AddressInfo> = HashMap::new();
+    
+    // Iterate over rreceived events
+    let _ = sub.try_fold(&mut map, |map, log_result| async {
         let log = log_result;
         let mut pool_address_info : AddressInfo = Default::default();
 
@@ -102,7 +104,7 @@ async fn main() -> web3::contract::Result<()> {
             we don't ask again for static data (such as the decimals or symbol of a token),
             because we have stored this information in a map
         **/
-
+        
         if map.contains_key(&log.address) {
             // Pool_address already stored
             pool_address_info = map[&log.address].clone();
