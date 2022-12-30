@@ -7,7 +7,7 @@
   <p align="center"> <br />
     Implementation: It listens to the blockchain filtering events (Sync event uniswap V2 and Swap event Uniswap V3). Specifically, there are two data in which symbol (e.g. WETH) and decimals (e.g. 8) need to be queried, this means that there may be a certain overhead of queries, so I have created a HashMap to store this information, and there is no need to ask the blockchain again. The rest of the information can be obtained directly from the events.
     <br /> <br />
-    Possible improvements or changes: Filter (apart from events) with contracts (e.g. UniswapV2Contract). When a query is made, if there is an error, it is handled with an expect("..."), that is, stop an panic! the runtime execution (it can be changed with a try!). A more advanced implementation would be to get the optimal price of a pair (e.g. WETH/USDC), through routes with other pairs, or by looking in the mempool
+    Possible improvements or changes: Filter (apart from events) with contracts (e.g. UniswapV2Contract). When a query is made, if there is an error, it is handled with an expect("..."), that is, stop an panic! the runtime execution (it can be changed with a try!). A more advanced implementation would be to get the optimal price of a pair (e.g. WETH/USDC), through routes with other pairs, or by looking in the mempool.
     <br />
     <br />
     <br />
