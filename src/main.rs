@@ -24,7 +24,7 @@ struct AddressInfo {
 }
 
 
-pub const WEBSOCKET_URL: &str = "wss://eth-mainnet.g.alchemy.com/v2/kupwQ8mMkxStCTElVHYk0zIWVLZnvfk0";
+pub const WEBSOCKET_URL: &str = "http://localhost:8545";
 
 /**
     Prints uniswap pool type (V2) and price token1/token0 (e.g. WETH/USDC: 0.00065) 
