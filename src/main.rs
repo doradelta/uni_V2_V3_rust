@@ -154,7 +154,7 @@ async fn main() -> web3::contract::Result<()> {
                 .await
                 .expect("Error reading symbol from ERC20 contract");
 
-            // Store the pool_addres an its info, to avoid overhead of querys
+            // Store the pool_addres and its info, to avoid overhead of querys
             map.insert(log.address, pool_address_info.clone());
         }
 
