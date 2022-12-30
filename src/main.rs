@@ -107,8 +107,7 @@ async fn main() -> web3::contract::Result<()> {
             // Pool_address already stored
             pool_address_info = map[&log.address].clone();
         }
-        else{ // New pool_address
-
+        else{ // New pool_address, we need to query data (symbols and decimals)
             let uniswap_pair_contract =
                 Contract::from_json(web3.eth(), log.address, include_bytes!("../abi/UniswapPair_abi.json")).unwrap();
             
