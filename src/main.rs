@@ -99,11 +99,11 @@ async fn main() -> web3::contract::Result<()> {
         let log = log_result;
         let mut pool_address_info : AddressInfo = Default::default();
 
-        /** 
+        /* 
             If the pool has already been seen by this program at runtime, 
             we don't ask again for static data (such as the decimals or symbol of a token),
             because we have stored this information in a map
-        **/
+        */
         
         if map.contains_key(&log.address) {
             // Pool_address already stored
